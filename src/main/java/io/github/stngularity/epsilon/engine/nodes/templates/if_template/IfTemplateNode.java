@@ -70,7 +70,7 @@ public class IfTemplateNode extends BaseTemplateNode {
             return matcher.group(1);
 
         for(IPlaceholder placeholder : engine.getPlaceholders()) {
-            if(!engine.placeholderEqual(placeholder, original)) continue;
+            if(engine.placeholderNotEqual(placeholder, original)) continue;
             return engine.getPlaceholderValue(placeholder, original, "");
         }
 
