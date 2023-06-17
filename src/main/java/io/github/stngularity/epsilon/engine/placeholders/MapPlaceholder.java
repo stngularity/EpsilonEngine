@@ -1,10 +1,9 @@
-package me.stngularity.epsilon.engine.placeholders;
+package io.github.stngularity.epsilon.engine.placeholders;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Placeholder for work with maps.

@@ -1,4 +1,4 @@
-package me.stngularity.epsilon.engine.nodes;
+package io.github.stngularity.epsilon.engine.nodes;
 
 public class TextNode extends BaseNode {
     private final String content;

@@ -1,7 +1,7 @@
-package me.stngularity.epsilon.engine.formatter;
+package io.github.stngularity.epsilon.engine.formatter;
 
-import me.stngularity.epsilon.engine.EpsilonEngine;
-import me.stngularity.epsilon.engine.placeholders.Placeholder;
+import io.github.stngularity.epsilon.engine.placeholders.Placeholder;
+import io.github.stngularity.epsilon.engine.EpsilonEngine;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;

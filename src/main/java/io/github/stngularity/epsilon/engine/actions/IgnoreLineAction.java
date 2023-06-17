@@ -1,4 +1,4 @@
-package me.stngularity.epsilon.engine.actions;
+package io.github.stngularity.epsilon.engine.actions;
 
 /**
  * Action to ignore the line it is on

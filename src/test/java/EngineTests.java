@@ -1,7 +1,7 @@
-import me.stngularity.epsilon.engine.EpsilonEngine;
-import me.stngularity.epsilon.engine.placeholders.MapPlaceholder;
-import me.stngularity.epsilon.engine.placeholders.Placeholder;
-import me.stngularity.epsilon.engine.placeholders.TimePlaceholder;
+import io.github.stngularity.epsilon.engine.EpsilonEngine;
+import io.github.stngularity.epsilon.engine.placeholders.MapPlaceholder;
+import io.github.stngularity.epsilon.engine.placeholders.Placeholder;
+import io.github.stngularity.epsilon.engine.placeholders.TimePlaceholder;
 import org.junit.Test;
 
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package me.stngularity.epsilon.engine.formatter;
+package io.github.stngularity.epsilon.engine.formatter;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,9 +1,9 @@
-package me.stngularity.epsilon.engine.nodes.templates;
+package io.github.stngularity.epsilon.engine.nodes.templates;
 
-import me.stngularity.epsilon.engine.EpsilonEngine;
-import me.stngularity.epsilon.engine.nodes.BaseNode;
-import me.stngularity.epsilon.engine.nodes.RootNode;
-import me.stngularity.epsilon.engine.nodes.templates.if_template.IfTemplateNode;
+import io.github.stngularity.epsilon.engine.nodes.templates.if_template.IfTemplateNode;
+import io.github.stngularity.epsilon.engine.EpsilonEngine;
+import io.github.stngularity.epsilon.engine.nodes.BaseNode;
+import io.github.stngularity.epsilon.engine.nodes.RootNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

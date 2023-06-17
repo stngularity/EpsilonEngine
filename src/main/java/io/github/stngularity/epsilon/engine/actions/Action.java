@@ -1,4 +1,4 @@
-package me.stngularity.epsilon.engine.actions;
+package io.github.stngularity.epsilon.engine.actions;
 
 /**
  * The base class for actions

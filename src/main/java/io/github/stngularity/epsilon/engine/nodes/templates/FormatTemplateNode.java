@@ -1,9 +1,9 @@
-package me.stngularity.epsilon.engine.nodes.templates;
+package io.github.stngularity.epsilon.engine.nodes.templates;
 
-import me.stngularity.epsilon.engine.EpsilonEngine;
-import me.stngularity.epsilon.engine.formatter.Fonts;
-import me.stngularity.epsilon.engine.formatter.LineFormatter;
-import me.stngularity.epsilon.engine.nodes.RootNode;
+import io.github.stngularity.epsilon.engine.formatter.LineFormatter;
+import io.github.stngularity.epsilon.engine.nodes.RootNode;
+import io.github.stngularity.epsilon.engine.EpsilonEngine;
+import io.github.stngularity.epsilon.engine.formatter.Fonts;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,7 @@
-package me.stngularity.epsilon.engine;
+package io.github.stngularity.epsilon.engine;
 
-import me.stngularity.epsilon.engine.nodes.*;
-import me.stngularity.epsilon.engine.nodes.templates.BaseTemplateNode;
+import io.github.stngularity.epsilon.engine.nodes.*;
+import io.github.stngularity.epsilon.engine.nodes.templates.BaseTemplateNode;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.regex.Matcher;

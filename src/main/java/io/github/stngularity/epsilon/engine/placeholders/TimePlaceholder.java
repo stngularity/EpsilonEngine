@@ -1,4 +1,4 @@
-package me.stngularity.epsilon.engine.placeholders;
+package io.github.stngularity.epsilon.engine.placeholders;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

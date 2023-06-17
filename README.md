@@ -20,7 +20,7 @@ First, add Sonatype repository to your Maven project:
 <repositories>
    <repository>
       <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
    </repository>
 </repositories>
 ```
@@ -29,7 +29,7 @@ Second, add an engine to dependencies of your Maven project:
 ```xml
 <dependencies>
    <dependency>
-      <groupId>me.stngularity.epsilon</groupId>
+      <groupId>io.github.stngularity.epsilon</groupId>
       <artifactId>engine</artifactId>
       <version>0.1.0-SNAPSHOT</version>
       <scope>compile</scope>
@@ -44,8 +44,8 @@ Third, use `EpsilonEngine` class for work with an engine (in example uses Bukkit
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 
-import me.stngularity.epsilon.engine.EpsilonEngine;
-import me.stngularity.epsilon.engine.placeholders.Placeholder;
+import io.github.stngularity.epsilon.engine.EpsilonEngine;
+import io.github.stngularity.epsilon.engine.placeholders.Placeholder;
 
 public class BeautifulPlugin extends JavaPlugin {
    @Override

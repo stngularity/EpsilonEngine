@@ -1,14 +1,14 @@
-package me.stngularity.epsilon.engine;
+package io.github.stngularity.epsilon.engine;
 
-import me.stngularity.epsilon.engine.actions.Action;
-import me.stngularity.epsilon.engine.actions.Actions;
-import me.stngularity.epsilon.engine.nodes.ActionNode;
-import me.stngularity.epsilon.engine.nodes.PlaceholderNode;
-import me.stngularity.epsilon.engine.nodes.RootNode;
-import me.stngularity.epsilon.engine.nodes.TextNode;
-import me.stngularity.epsilon.engine.nodes.templates.BaseTemplateNode;
-import me.stngularity.epsilon.engine.placeholders.IPlaceholder;
-import me.stngularity.epsilon.engine.placeholders.MapPlaceholder;
+import io.github.stngularity.epsilon.engine.nodes.ActionNode;
+import io.github.stngularity.epsilon.engine.nodes.PlaceholderNode;
+import io.github.stngularity.epsilon.engine.nodes.RootNode;
+import io.github.stngularity.epsilon.engine.nodes.TextNode;
+import io.github.stngularity.epsilon.engine.nodes.templates.BaseTemplateNode;
+import io.github.stngularity.epsilon.engine.placeholders.MapPlaceholder;
+import io.github.stngularity.epsilon.engine.actions.Action;
+import io.github.stngularity.epsilon.engine.actions.Actions;
+import io.github.stngularity.epsilon.engine.placeholders.IPlaceholder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

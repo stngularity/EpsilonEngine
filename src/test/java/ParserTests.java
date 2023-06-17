@@ -1,6 +1,6 @@
-import me.stngularity.epsilon.engine.Parser;
-import me.stngularity.epsilon.engine.nodes.*;
-import me.stngularity.epsilon.engine.nodes.templates.BaseTemplateNode;
+import io.github.stngularity.epsilon.engine.Parser;
+import io.github.stngularity.epsilon.engine.nodes.*;
+import io.github.stngularity.epsilon.engine.nodes.templates.BaseTemplateNode;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 

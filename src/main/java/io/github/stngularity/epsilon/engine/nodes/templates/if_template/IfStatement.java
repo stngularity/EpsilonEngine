@@ -1,4 +1,4 @@
-package me.stngularity.epsilon.engine.nodes.templates.if_template;
+package io.github.stngularity.epsilon.engine.nodes.templates.if_template;
 
 public class IfStatement {
     private final String statement;
