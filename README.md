@@ -60,6 +60,8 @@ public class BeautifulPlugin extends JavaPlugin {
 ## Comment from me
 > "Reinventing the wheel is fun and educational."
 > — stngularity, 2023 year
+> > "...but still a bad idea"
+> > — [Egor Bron](https://github.com/EgorBron), 2023 year
 
 ## License
 This project is completely open-source and distributed under the `MIT`
