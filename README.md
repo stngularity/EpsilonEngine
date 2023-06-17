@@ -53,6 +53,17 @@ public class BeautifulPlugin extends JavaPlugin {
       EpsilonEngine engine = new EpsilonEngine();  // You can specify custom patterns for any parts of engine in arguments
       engine.addPlaceholder(new Placeholder("plugin.name", getName()));
       Bukkit.getConsoleSender().sendMessage(engine.process("Enabled {plugin.name}!"));
+
+      // if/elif/else
+      List.of("owner", "admin", "moder", "unknown").forEach(rank -> {
+            EpsilonEngine engine = new EpsilonEngine();
+            engine.addPlaceholder(new Placeholder("user.rank", rank));
+            Bukkit.getConsoleSender().sendMessage(engine.process("You're $if[user.rank == 'owner']$owner$elif[user.rank == 'admin']$admin$elif[user.rank == 'moder']$moder$else$user$endif$!"));
+        });
+
+      // format (maxLength, font, format & placeholder)
+      engine.addPlaceholder(new Placeholder("text", "Hello, hello, hello, hello, hello, hello, hello"));
+      Bukkit.getConsoleSender().sendMessage(engine.process("Max length (14) & format & placeholder:\n$format[maxLength=14,font=smallcaps,format=''  {original}  '']${text}$endFormat$"));
    }
 }
 ```
