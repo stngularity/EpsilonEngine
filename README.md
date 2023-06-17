@@ -52,7 +52,7 @@ public class BeautifulPlugin extends JavaPlugin {
    public void onEnable() {
       EpsilonEngine engine = new EpsilonEngine();  // You can specify custom patterns for any parts of engine in arguments
       engine.addPlaceholder(new Placeholder("plugin.name", getName()));
-      Bukkit.getConsoleSender().sendMessage("Enabled {plugin.name}!");
+      Bukkit.getConsoleSender().sendMessage(engine.process("Enabled {plugin.name}!"));
    }
 }
 ```
