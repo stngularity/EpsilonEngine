@@ -56,10 +56,10 @@ public class BeautifulPlugin extends JavaPlugin {
 
       // if/elif/else
       List.of("owner", "admin", "moder", "unknown").forEach(rank -> {
-            EpsilonEngine engine = new EpsilonEngine();
-            engine.addPlaceholder(new Placeholder("user.rank", rank));
-            Bukkit.getConsoleSender().sendMessage(engine.process("You're $if[user.rank == 'owner']$owner$elif[user.rank == 'admin']$admin$elif[user.rank == 'moder']$moder$else$user$endif$!"));
-        });
+         EpsilonEngine engine = new EpsilonEngine();
+         engine.addPlaceholder(new Placeholder("user.rank", rank));
+         Bukkit.getConsoleSender().sendMessage(engine.process("You're $if[user.rank == 'owner']$owner$elif[user.rank == 'admin']$admin$elif[user.rank == 'moder']$moder$else$user$endif$!"));
+      });
 
       // format (maxLength, font, format & placeholder)
       engine.addPlaceholder(new Placeholder("text", "Hello, hello, hello, hello, hello, hello, hello"));
