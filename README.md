@@ -62,6 +62,8 @@ public class BeautifulPlugin extends JavaPlugin {
 > — stngularity, 2023 year
 > > "...but still a bad idea"
 > > — [Egor Bron](https://github.com/EgorBron), 2023 year
+> > > "...unless your wheel is better"
+> > > — [Jabka](https://github.com/Jabka-M), 2023 year
 
 ## License
 This project is completely open-source and distributed under the `MIT`
