@@ -1,8 +1,19 @@
+<p align=center>
+    <a href="https://github.com/stngularity"><img alt="stngularity's project" src="https://img.shields.io/badge/-stngularity's%20project-%23e5b3fe"></a>
+    <a href="https://github.com/stngularity/EpsilonEngine/actions/workflows/build.yml"><img alt="build" src="https://github.com/stngularity/EpsilonEngine/actions/workflows/build.yml/badge.svg"></a>
+</p>
+
+<p align=center>
+    <a href="https://github.com/stngularity/EpsilonEngine/issues"><img alt="issues" src="https://img.shields.io/github/issues/stngularity/EpsilonEngine?label=Issues&color=%23e5b3fe"></a>
+    <a href="https://github.com/stngularity/EpsilonEngine/pulls"><img alt="pull_requests" src="https://img.shields.io/github/issues-pr/stngularity/EpsilonEngine?label=Pull%20Requests&color=%23e5b3fe"></a>
+</p>
+
 ## What it is?
-`EpsilonEngine` is a text engine built for the `Epsilon` plugin (still in
-development) and `PrimPlugin` (plugin for the server where I'm deputy). It
-is needed for processing placeholders and convenient use `templates` (`if`
-and `format`). Now it is only in development. But he already knows something
+`EpsilonEngine` is a text engine built for the `Bukkit` plugins. It's needed for
+processing some expressions, for example, placeholders and templates (`if` and `format`).
+But now this project under development. Let you know, it may contain a lot of bugs.
+
+Thank you for taking the time to read this!
 
 ## Features
 1. Miscellaneous placeholders (static, by time, and a map that can use 
@@ -10,9 +21,6 @@ and `format`). Now it is only in development. But he already knows something
 2. Line actions, so far only 1 (`ignoreLine`). But you can add own actions
 3. Templates. Templates are checks (`if`/`elif`/`else`) and formatting
    (`format`). I will add more templates in the future.
-4. ~~Parser for color and formatting codes. Will return a native implementation 
-   of components that can be converted to Spigot or BungeeCord components~~
-   (`Coming Soon`)
 
 ## How to use?
 First, add Sonatype repository to your Maven project:
