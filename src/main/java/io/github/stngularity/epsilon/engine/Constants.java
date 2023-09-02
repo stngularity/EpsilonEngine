@@ -12,11 +12,7 @@ public class Constants {
     public static final EPattern DEFAULT_TEMPLATE_PATTERN = EPattern.builder()
             .child("start", Pattern.compile("\\$"))
             .child("name", Pattern.compile("[a-zA-Z0-9]+"))
-            .child("data",
-                    EPattern.builder().name("start").regex(Pattern.compile("\\[")).build(),
-                    EPattern.builder().name("value").regex(Pattern.compile("[^]]+"))
-                            .child("escape", Pattern.compile("\\\\.*")).build(),
-                    EPattern.builder().name("end").regex(Pattern.compile("]")).build())
+            .child("data", Pattern.compile("\\[([^]]+)]"))
             .child("end", Pattern.compile("\\$"))
             .build();
 
@@ -26,11 +22,7 @@ public class Constants {
     public static final EPattern DEFAULT_PLACEHOLDER_PATTERN = EPattern.builder()
             .child("start", Pattern.compile("\\{"))
             .child("name", Pattern.compile("[a-zA-Z0-9_\\-:.]+"))
-            .child("data",
-                    EPattern.builder().name("start").regex(Pattern.compile("\\[")).build(),
-                    EPattern.builder().name("value").regex(Pattern.compile("[^]]+"))
-                            .child("escape", Pattern.compile("\\\\.*")).build(),
-                    EPattern.builder().name("end").regex(Pattern.compile("]")).build())
+            .child("data", Pattern.compile("\\[([^]]+)]"))
             .child("end", Pattern.compile("}"))
             .build();
 
@@ -40,11 +32,7 @@ public class Constants {
     public static final EPattern DEFAULT_ACTION_PATTERN = EPattern.builder()
             .child("start", Pattern.compile("\\["))
             .child("name", Pattern.compile("[a-zA-Z0-9_\\-:.]+"))
-            .child("data",
-                    EPattern.builder().name("start").regex(Pattern.compile(": *")).build(),
-                    EPattern.builder().name("value").regex(Pattern.compile("[^]]+"))
-                            .child("escape", Pattern.compile("\\\\.*")).build(),
-                    EPattern.builder().name("end").regex(Pattern.compile("")).build())
+            .child("data", Pattern.compile(": *([^]]+)"))
             .child("end", Pattern.compile("]"))
             .build();
 }
