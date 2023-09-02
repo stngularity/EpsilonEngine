@@ -102,7 +102,7 @@ public class Parser {
 
         Matcher dataMatcher = template.get("data").getRegex().matcher(data);
         if(dataMatcher.find())
-            node.children.add(new RawNode("template.data", dataMatcher.group(1)));
+            node.children.add(new RawNode("template.data", dataMatcher.group(1), ""));
 
         return node;
     }
@@ -117,7 +117,7 @@ public class Parser {
 
         Matcher dataMatcher = placeholder.get("data").getRegex().matcher(data);
         if(dataMatcher.find())
-            node.children.add(new RawNode("placeholder.data", dataMatcher.group(1), dataMatcher.group(1)));
+            node.children.add(new RawNode("placeholder.data", dataMatcher.group(1), ""));
 
         return node;
     }
@@ -132,7 +132,7 @@ public class Parser {
 
         Matcher dataMatcher = action.get("data").getRegex().matcher(data);
         if(dataMatcher.find())
-            node.children.add(new RawNode("action.data", dataMatcher.group(1)));
+            node.children.add(new RawNode("action.data", dataMatcher.group(1), ""));
 
         return node;
     }
