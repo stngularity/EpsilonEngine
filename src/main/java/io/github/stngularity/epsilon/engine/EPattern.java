@@ -41,20 +41,12 @@ public class EPattern {
     }
 
     /**
-     * Returns regex of pattern
-     * @return Pattern regex
-     */
-    public @Nullable Pattern getRegex() {
-        return regex;
-    }
-
-    /**
      * Returns regex of pattern if that exists, else throws {@link IllegalArgumentException}
      *
      * @return Pattern regex
      * @throws IllegalArgumentException If pattern's regex is {@code null}
      */
-    public @NotNull Pattern rGetRegex() throws IllegalArgumentException {
+    public @NotNull Pattern getRegex() throws IllegalArgumentException {
         if(regex == null)
             throw new IllegalArgumentException("Pattern " + name + " requires a regex");
 

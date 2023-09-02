@@ -56,6 +56,6 @@ public class Tokenizer {
         for(String element : child)
             pattern = pattern.get(element);
 
-        return pattern.rGetRegex().matcher(content).find();
+        return pattern.getRegex().matcher(content).find();
     }
 }
