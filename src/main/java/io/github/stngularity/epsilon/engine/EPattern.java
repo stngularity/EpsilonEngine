@@ -164,7 +164,7 @@ public class EPattern {
          * Builds pattern
          * @return {@link EPattern}
          */
-        public EPattern build() throws IllegalArgumentException {
+        public EPattern build() {
             if(name == null)
                 throw new IllegalArgumentException("Specify the name of pattern");
 
