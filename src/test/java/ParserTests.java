@@ -1,34 +1,34 @@
-import io.github.stngularity.epsilon.engine.Parser;
-import io.github.stngularity.epsilon.engine.nodes.*;
-import io.github.stngularity.epsilon.engine.nodes.templates.BaseTemplateNode;
+import io.github.stngularity.epsilon.engine.Constants;
+import io.github.stngularity.epsilon.engine.EPattern;
+import io.github.stngularity.epsilon.engine.parser.Parser;
+import io.github.stngularity.epsilon.engine.parser.RawNode;
+import io.github.stngularity.epsilon.engine.tokenizer.Tokenizer;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParserTests {
     @Test
     public void testMultilineParse() {
+        String input = "Hello! I'm {name} and I was born {birthday[LLL dd, yyyy year]}. I am {job}.\n$if[job == \"developer\"]$And I know {planguages}.$else$[ignoreLine]$endif$";
+
+        List<EPattern> patterns = new ArrayList<>();
+        patterns.add(Constants.DEFAULT_TEMPLATE_PATTERN);
+        patterns.add(Constants.DEFAULT_PLACEHOLDER_PATTERN);
+        patterns.add(Constants.DEFAULT_ACTION_PATTERN);
+
         Parser parser = new Parser();
-        RootNode root = parser.parse("This is just example\n{greetings}, {user}\nNow {time[dd.MM.yyyy]}\n$if[user.isAdmin]$You're admin!$endif$");
-        testMultilineParse_printNode(root, 0);
+        List<RawNode> nodes = parser.parse(Tokenizer.tokenize(input, patterns));
+        nodes.forEach(node -> print(node, 0));
     }
 
-    private void testMultilineParse_printNode(@NotNull BaseNode node, int indent) {
-        String information = " ".repeat(indent) + "NODE " + node.getName();
-        if(node instanceof TextNode) {
-            String content = ((TextNode) node).getContent();
-            information += " [" + (content == null ? "null" : content.replace("\n", "\\n")) + "]";
-        }
+    private void print(@NotNull RawNode node, int indent) {
+        String value = (node.value == null ? "null" : "'" + node.value + "'").replace("\n", "\\n");
+        System.out.printf("%s[token] name=%s; value=%s; original='%s'%n", " ".repeat(indent),
+                node.name, value, node.original.replace("\n", "\\n"));
 
-        if(node instanceof PlaceholderNode)
-            information += " [name=" + ((PlaceholderNode) node).getPlaceholderName() + ", data=" + ((PlaceholderNode) node).getPlaceholderData() + "]";
-
-        if(node instanceof ActionNode)
-            information += " [name=" + ((ActionNode) node).getActionName() + ", data=" + ((ActionNode) node).getActionData() + "]";
-
-        if(node instanceof BaseTemplateNode)
-            information += " [name=" + ((BaseTemplateNode) node).getTemplateName() + ", content=" + ((BaseTemplateNode) node).getContent() + ", data=" + ((BaseTemplateNode) node).getData() + "]";
-
-        System.out.println(information);
-        node.getChildren().forEach(child -> testMultilineParse_printNode(child, indent+2));
+        node.children.forEach(t -> print(t, indent+2));
     }
 }
