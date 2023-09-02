@@ -15,7 +15,6 @@ public class EPattern {
     private final @NotNull String name;
     private final @Nullable Pattern regex;
     private final @NotNull List<EPattern> children;
-    private final boolean optional;
 
     /**
      * Initializes the pattern
@@ -23,13 +22,11 @@ public class EPattern {
      * @param name     Pattern name
      * @param regex    Pattern regex
      * @param children Pattern children list
-     * @param optional Whether pattern is optional
      */
-    private EPattern(@NotNull String name, @Nullable Pattern regex, @NotNull List<EPattern> children, boolean optional) {
+    private EPattern(@NotNull String name, @Nullable Pattern regex, @NotNull List<EPattern> children) {
         this.name = name;
         this.regex = regex;
         this.children = children;
-        this.optional = optional;
     }
 
     /**
@@ -78,14 +75,6 @@ public class EPattern {
     }
 
     /**
-     * Whether pattern is optional
-     * @return {@code true} or {@code false}
-     */
-    public boolean isOptional() {
-        return optional;
-    }
-
-    /**
      * Creates the builder instance
      * @return {@link EnginePatternBuilder}
      */
@@ -101,7 +90,6 @@ public class EPattern {
         private String name;
         private @Nullable Pattern regex = null;
         private final @NotNull List<EPattern> children = new ArrayList<>();
-        private boolean optional = false;
 
         /**
          * Sets the name of pattern
@@ -151,38 +139,11 @@ public class EPattern {
          * Creates new child using specified parameters and adds it to pattern
          *
          * @param name     The name of child pattern
-         * @param regex    The regex of child pattern
-         * @param optional Whether pattern is optional
-         * @param children List of pattern children
-         * @return @link EnginePatternBuilder}
-         */
-        public EnginePatternBuilder child(String name, Pattern regex, boolean optional, EPattern @NotNull ... children) {
-            this.children.add(new EPattern(name, regex, List.of(children), optional));
-            return this;
-        }
-
-        /**
-         * Creates new child using specified parameters and adds it to pattern
-         *
-         * @param name     The name of child pattern
-         * @param optional Whether pattern is optional
-         * @param children List of pattern children
-         * @return @link EnginePatternBuilder}
-         */
-        public EnginePatternBuilder child(String name, boolean optional, EPattern @NotNull ... children) {
-            this.children.add(new EPattern(name, null, List.of(children), optional));
-            return this;
-        }
-
-        /**
-         * Creates new child using specified parameters and adds it to pattern
-         *
-         * @param name     The name of child pattern
          * @param children List of pattern children
          * @return @link EnginePatternBuilder}
          */
         public EnginePatternBuilder child(String name, EPattern @NotNull ... children) {
-            this.children.add(new EPattern(name, null, List.of(children), false));
+            this.children.add(new EPattern(name, null, List.of(children)));
             return this;
         }
 
@@ -195,18 +156,7 @@ public class EPattern {
          * @return @link EnginePatternBuilder}
          */
         public EnginePatternBuilder child(String name, Pattern regex, EPattern @NotNull ... children) {
-            this.children.add(new EPattern(name, regex, List.of(children), false));
-            return this;
-        }
-
-        /**
-         * Sets the optionality of pattern
-         *
-         * @param optional The new optionality value
-         * @return {@link EnginePatternBuilder}
-         */
-        public EnginePatternBuilder optional(boolean optional) {
-            this.optional = optional;
+            this.children.add(new EPattern(name, regex, List.of(children)));
             return this;
         }
 
@@ -214,11 +164,11 @@ public class EPattern {
          * Builds pattern
          * @return {@link EPattern}
          */
-        public EPattern build() {
+        public EPattern build() throws IllegalArgumentException {
             if(name == null)
                 throw new IllegalArgumentException("Specify the name of pattern");
 
-            return new EPattern(name, regex, children, optional);
+            return new EPattern(name, regex, children);
         }
     }
 }
