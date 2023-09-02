@@ -1,6 +1,6 @@
 package io.github.stngularity.epsilon.engine.tokenizer;
 
-import io.github.stngularity.epsilon.engine.parser.EPattern;
+import io.github.stngularity.epsilon.engine.EPattern;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
